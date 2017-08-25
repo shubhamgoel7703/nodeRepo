@@ -1,0 +1,197 @@
+
+
+          <div class="container confirmationClass" style="margin-top:60px;">
+                    <!-- Start of Confirmation Content -->
+                    <div class="col-md-12">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Your reservation is confirmed!!!</h3>
+                  </div>
+                  <div class="panel-body">
+                    Confirmation Number:1234567890
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="col-md-8 no-padding">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Your Selection</h3>
+                  </div>
+                  <div class="panel-body">
+
+                      <div class="thumbnail">
+                        <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-4">
+                          <img src="https://cache.marriott.com/propertyimages/m/miasb/miasbe01.jpg" alt="The Ritz-Carlton, South Beach" title="The Ritz-Carlton, South Beach">
+                        </div>
+                        <div class="caption">
+                          <div class="col-md-8" id="cap">
+                            <h3>{{selhotel}}</h3>
+                            <table style="width:100%">
+                                <tr>
+                                  <td>Check In:</td>
+                                  <td>{{searchOptions.today}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Check Out:</td>
+                                  <td>searchOptions.tomorrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Rooms:</td>
+                                  <td>1</td>
+                                </tr>
+                                <tr>
+                                  <td>Guests:</td>
+                                  <td>1</td>
+                                </tr>
+                              </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel panel-primary" id="panel1">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Summary of charges</h3>
+                  </div>
+                  <div class="panel-body">
+                    <table style="width:100%">
+                      <tr>
+                        <th>Feb 11 2017</th>
+                        <th>275.00</th>
+                      </tr>
+                      <tr>
+                        <td>Total per room</td>
+                        <td>270USD</td>
+                      </tr>
+                      <tr>
+                        <td>Taxes</td>
+                        <td>42</td>
+                      </tr>
+                      <tr>
+                        <td>Fees</td>
+                        <td>43</td>
+                      </tr>
+                      <tr>
+                        <td>Total for stay,1 room(s)</td>
+                        <td>524</td>
+                      </tr>
+                    </table>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Payment Information</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row" id="name">
+           <div class="col-md-3">
+               <p>*Name on Card:</p>
+               <input id="firstname" type="text" name="firstname"/>
+           </div>
+           <div class="col-md-3">
+             <p>*Credit Card Number:</p>
+             <input id="lastname" type="text" name="lastname"/>
+           </div>
+       </div>
+           <div>
+             <div id="expdate">
+               <p>*Expiration Date</p>
+               <select>
+                   <option value="01">January</option>
+                   <option value="02">February </option>
+                   <option value="03">March</option>
+                   <option value="04">April</option>
+                   <option value="05">May</option>
+                   <option value="06">June</option>
+                   <option value="07">July</option>
+                   <option value="08">August</option>
+                   <option value="09">September</option>
+                   <option value="10">October</option>
+                   <option value="11">November</option>
+                   <option value="12">December</option>
+               </select>
+               <select>
+                  <option value="17"> 2017</option>
+                   <option value="18"> 2018</option>
+                   <option value="19"> 2019</option>
+                   <option value="20"> 2020</option>
+                   <option value="21"> 2021</option>
+                   <option value="22"> 2022</option>
+               </select>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+      <div class="col-md-12 no-padding">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Guest Information</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row" id="guest">
+              <div class="col-md-3">
+                <p>*Title:</p>
+                <select>
+                  <option value="mr">Mr</option>
+                  <option value="ms">Ms </option>
+                  <option value="mrs">Mrs</option>
+                </select>
+              </div>
+           <div class="col-md-3">
+               <p>*First Name:</p>
+               <input id="firstname" type="text" name="firstname"/>
+           </div>
+           <div class="col-md-3">
+             <p>*Last Name:</p>
+             <input id="lastname" type="text" name="lastname"/>
+           </div>
+       </div>
+        <div id="email">  <p>*E-mail</p> <input type="email" name="email"></div>
+            <div class="row" id="addr">
+                       <div class="col-md-3">
+                         <p>*Address:</p>
+                         <input id="address" type="text" name="address"/>
+                       </div>
+                       <div class="col-md-3">
+                         <p>*City:</p>
+                         <input id="city" type="text" name="city"/>
+                       </div>
+                   </div>
+                   <div class="row" id="state">
+                    <div class="col-md-3">
+                      <p>*State:</p>
+                      <select>
+                        <option value="miami">Miami</option>
+                        <option value="washington">Washington</option>
+                        <option value="ny">New York</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                        <p>*Country:</p>
+                        <select>
+                          <option value="usa">USA</option>
+                          <option value="india">India</option>
+                          <option value="sa">South Africa </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                      <p>*Zip:</p>
+                      <input id="zip" type="text" name="zip"/>
+                    </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            <!-- End of Confirmation Content -->
+            </div>
+</div>

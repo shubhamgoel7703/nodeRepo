@@ -1,0 +1,593 @@
+
+
+<div ng-if="searchOptions.location == 'Miami Beach'" style="color:#000 !important;">
+            <!--My section Begins-->
+            <div class="container search-results">
+              <div class="panel panel-default">
+                <div class="panel-body panel-heading">
+                  3 hotel list Found in Miami, Beach FL, USA
+                </div>
+              </div>
+              <div class="hotel-list">
+                <div class="thumbnail">
+
+<!--First hotel-->
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miasb/miasbe01.jpg" alt="The Ritz-Carlton, South Beach" title="The Ritz-Carlton, South Beach">
+                    </div>
+					<div class="col-md-6">
+					<h4>The Ritz-Carlton, South Beach</h4>
+
+					</div>
+					<div class="col-md-4 no-padding">
+                      <div class="hotel-details">
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> <span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> <span class="totalPrice_hotel_1">{{totalPrice_1}}</span> USD</p>
+                        <a href="javascript://" id="viewRates1" onClick="getDetails(1)" class="btn btn-primary view-rates" role="button">Make Selection</a>
+                      </div>
+					  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+			<div id="type-details-1" class="noDisplay">
+            <div class="filter-options">
+            <div ng-repeat="type in aminity" class="col-md-6">
+              <div class="type-header" ng-click="getTypeDetails($event)" data-id="{{type.id}}" data-hotel="1">
+              <table>
+                <tr>
+                <td style="width:30px;"><img src="img/{{type.img}}" /></td>
+                <td style="width: 100px;">{{type.type}} </td>
+                <td><span id="type_1_{{type.id}}" ng-if="type.type == 'Bed Type'">5.0</span>
+                  <span id="type_1_{{type.id}}" ng-if="type.type == 'Floor Type'">0.0</span>
+                  <span ng-class="userType == 'Platinum'?'line-through':''" id="type_1_{{type.id}}" ng-if="type.type == 'View Type'">0.0</span> &nbsp;USD</td>
+                </tr>
+                </table>
+              </div>
+              <ul class="hotel-options" id="hotel_1_{{type.id}}">
+                <li ng-repeat="opt in type.options">
+                  <label>
+                    <input type="radio" name="opt_1_{{type.id}}" ng-model="opt_1_[index]" data-hotel="1" data-id="{{type.id}}" data-price="{{opt.price}}" ng-click="getOptionPrice($event,$index)" data-check="{{opt.check}}" ng-checked="opt.check"/> &nbsp;&nbsp;&nbsp;{{opt.option}}
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <a href="javascript://" id="search1" onClick="getHotelDetail(1)" class="btn btn-primary search" role="button">Search</a>
+          </div>
+<!--First hotel Accordion-->
+<div id="attribute-list-1" class="noDisplay">
+  <!--p>The following <strong>4 products</strong> are available for your travel plans.</p-->
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <!--<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse11" href="" aria-expanded="false" aria-controls="collapse11">-->
+          <!-- Toggle not required -->
+      <span data-parent="#accordion" data-target="#collapse11">
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse11" -->
+		  <span ng-repeat="amn in aminity">
+							<span ng-repeat="opts in amn.options | filter:{check:true}">
+							{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span>, </span>
+						</span>
+		   <light> DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse11" class="panel-collapse expand">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-3">
+              <p class="coral-color">DSP RATE PLAN</p>
+              <br>Regular Rate
+              <br>Room Details
+              <br><br>
+              TOTAL PRICE for <stron>1 room</strong>
+              <br><p class="rate"><strong><span class="perdayPrice_hotel_1">{{totalPrice_1}}</span> USD</strong></p>
+              <br><a href="javascript://" ng-click="getConfirmation($event)" class="btn btn-primary book-now" data-hname="The Ritz-Carlton, South Beach" role="button">Book Now</a>
+            </div>
+              <div class="hotel-details">
+                <div class="col-md-9 no-padding">
+                  <p><strong>Rate Breakdown</strong></p>
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <table class="col-md-12">
+                    <tr class="separator">
+                      <th>Dates</th>
+                      <th>Base Price</th>
+                      <th>Attribute Prices</th>
+                      <th></th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tr>
+                      <td>{{searchOptions.today}}</td>
+                      <td class="bold">283.00 USD</td>
+                      <td rowspan="4" colspan="2">
+						<table ng-repeat="amn in aminity" style="width:100%;">
+							<tr ng-repeat="opts in amn.options | filter:{check:true}">
+								<td class="bold" style="width:150px">{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span></td>
+								<td><span  ng-if="amn.type == 'View Type' && userType == 'Platinum'">0.00</span>
+                  <span ng-if="amn.type != 'View Type'">{{opts.price}}.00</span> USD</td>
+							</tr>
+						</table>
+					  </td>
+                      <td class="bold coral-color"><span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr class="separator">
+                      <td></td>
+                      <td></td>
+                      <td class="bold" style="width:150px;">Near Elevator</td>
+                      <td>0.00 USD</td>
+                      <td></td>
+                    </tr>
+                    <tr class="bold">
+                     <td>1 Night(s) per room</td>
+                     <td>283.00 USD</td>
+                     <td >{{aminities_price1}}.00 USD</td>
+                     <td></td>
+                     <td><span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</td>
+                   </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="marginTopBottom">
+                <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax11')"> Total Taxes</a>
+                <table class="col-md-12 noDisplay marginLeft" id="total-tax11">
+                <tr>
+                <td >Review_CityTax (for stay)</td>
+                <td>10.00 USD</td>
+                </tr>
+                <tr>
+                <td >Review_RollAwayTax (for stay)</td>
+                <td>5.26 USD</td>
+                </tr>
+                <tr>
+                <td >Review_CountryTax (Jul 05)</td>
+                <td>5.90 USD</td>
+                </tr>
+                </table>
+                <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees11')"> Total Fees</a>
+
+                <table class="col-md-12 noDisplay marginLeft" id="total-fees11">
+                <tr>
+                <td >Resort Fee (Jul 05)</td>
+                <td>20.00 USD</td>
+                </tr>
+                <tr>
+                <td >State Cost Recovery Fee (Jul 05)</td>
+                <td>10.00 USD</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <p class="separator"></p>
+              <table class="col-md-12" style="margin-left: 30px;">
+                <tr>
+                  <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                  <td class="bold"><span class="perdayPrice_hotel_1">{{totalPrice_1}}</span> USD</td>
+                </tr>
+              </table>
+            </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--Second hotel-->
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="row">
+    <div class="col-md-12">
+  <div class="col-md-2 no-padding">
+    <img src="https://cache.marriott.com/propertyimages/m/miach/miache01.jpg" alt="Residence Inn Miami Beach South Beach" title="Residence Inn Miami Beach South Beach">
+  </div>
+<div class="col-md-6">
+<h4>Residence Inn Miami Beach South Beach</h4>
+
+</div>
+<div class="col-md-4 no-padding">
+    <div class="hotel-details">
+        <p class="lar-style search-results">Lowest Available Rates</p>
+        <p class="lar-style"><strong>Day:</strong> <span class="perdayPrice_hotel_2">{{perdayPrice_2}}</span> USD</p>
+        <p class="lar-style"><strong>Stay:</strong> <span class="totalPrice_hotel_2">{{totalPrice_2}}</span> USD</p>
+      <a href="javascript://" id="viewRates2" onClick="getDetails(2)" class="btn btn-primary view-rates" role="button">Make Selection</a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="type-details-2" class="noDisplay">
+<div class="filter-options">
+<div ng-repeat="type in aminity1" class="col-md-6">
+<div class="type-header" ng-click="getTypeDetails($event)" data-id="{{type.id}}" data-hotel="2">
+<table>
+<tr>
+<td style="width:30px;"><img src="img/{{type.img}}" /></td>
+<td style="width: 100px;">{{type.type}} </td>
+<td><span id="type_2_{{type.id}}" ng-if="type.type == 'Bed Type'">5.0</span><span id="type_2_{{type.id}}" ng-if="type.type != 'Bed Type'">0.0</span> &nbsp;USD</td>
+</tr>
+</table>
+</div>
+<ul class="hotel-options" id="hotel_2_{{type.id}}">
+<li ng-repeat="opt in type.options">
+<label>
+  <input type="radio" name="opt_2_{{type.id}}" ng-model="opt_2_[index]" data-hotel="2" data-id="{{type.id}}" data-price="{{opt.price}}" ng-click="getOptionPrice($event,$index)" data-check="{{opt.check}}" ng-checked="opt.check"/> &nbsp;&nbsp;&nbsp;{{opt.option}}
+</label>
+</li>
+</ul>
+</div>
+<a href="javascript://" id="search2" onClick="getHotelDetail(2)" class="btn btn-primary search" role="button">Search</a>
+</div>
+
+<!--Second hotel Accordion-->
+<div id="attribute-list-2" class="noDisplay">
+  <!--p>The following <strong>4 products</strong> are available for your travel plans.</p-->
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <!--<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse21" href="" aria-expanded="false" aria-controls="collapse21">-->
+          <!-- Toggle not required -->
+      <span data-parent="#accordion" data-target="#collapse21">
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse21" -->
+      <span ng-repeat="amn in aminity1">
+              <span ng-repeat="opts in amn.options | filter:{check:true}">{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span>, </span>
+            </span>
+       <light> DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse21" class="panel-collapse expand">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-3">
+              <p class="coral-color">DSP RATE PLAN</p>
+              <br>Regular Rate
+              <br>Room Details
+              <br><br>
+              TOTAL PRICE for <stron>1 room</strong>
+              <br><p class="rate"><strong><span class="perdayPrice_hotel_2">{{totalPrice_2}}</span> USD</strong></p>
+              <br><a href="javascript://" ng-click="getConfirmation($event)" class="btn btn-primary book-now" data-hname="Residence Inn Miami Beach South Beach" role="button">Book Now</a>
+            </div>
+              <div class="hotel-details">
+                <div class="col-md-9 no-padding">
+                  <p><strong>Rate Breakdown</strong></p>
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <table class="col-md-12">
+                    <tr class="separator">
+                      <th>Dates</th>
+                      <th>Base Price</th>
+                      <th>Attribute Prices</th>
+                      <th></th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tr>
+                      <td>{{searchOptions.today}}</td>
+                      <td class="bold">315.00 USD</td>
+                      <td rowspan="4" colspan="2">
+            <table ng-repeat="amn in aminity1" style="width:100%;">
+              <tr ng-repeat="opts in amn.options | filter:{check:true}">
+                <td class="bold" style="width:150px">{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span></td>
+                <td>{{opts.price}}.00 USD</td>
+              </tr>
+            </table>
+            </td>
+                      <td class="bold coral-color"><span class="perdayPrice_hotel_2">{{perdayPrice_2}}</span> USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr class="separator">
+                      <td></td>
+                      <td></td>
+                      <td class="bold" style="width:150px;">Near Elevator</td>
+                      <td>0.00 USD</td>
+                      <td></td>
+                    </tr>
+                    <tr class="bold">
+                     <td>1 Night(s) per room</td>
+                     <td>315.00 USD</td>
+                     <td >{{aminities_price2}}.00 USD</td>
+                     <td></td>
+                     <td><span class="perdayPrice_hotel_2">{{perdayPrice_2}}</span> USD</td>
+                   </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="marginTopBottom">
+                <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax21')"> Total Taxes</a>
+                <table class="col-md-12 noDisplay marginLeft" id="total-tax21">
+                <tr>
+                <td >Review_CityTax (for stay)</td>
+                <td>10.00 USD</td>
+                </tr>
+                <tr>
+                <td >Review_RollAwayTax (for stay)</td>
+                <td>5.26 USD</td>
+                </tr>
+                <tr>
+                <td >Review_CountryTax (Jul 05)</td>
+                <td>5.90 USD</td>
+                </tr>
+                </table>
+                <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees21')"> Total Fees</a>
+
+                <table class="col-md-12 noDisplay marginLeft" id="total-fees21">
+                <tr>
+                <td >Resort Fee (Jul 05)</td>
+                <td>20.00 USD</td>
+                </tr>
+                <tr>
+                <td >State Cost Recovery Fee (Jul 05)</td>
+                <td>10.00 USD</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <p class="separator"></p>
+              <table class="col-md-12" style="margin-left: 30px;">
+                <tr>
+                  <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                  <td class="bold"><span class="perdayPrice_hotel_2">{{totalPrice_2}}</span> USD</td>
+                </tr>
+              </table>
+            </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--Third hotel-->
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="row">
+    <div class="col-md-12">
+  <div class="col-md-2 no-padding">
+    <img src="https://cache.marriott.com/propertyimages/m/miamv/miamve01.jpg" alt="Marriott Vacation Club Pulse, South Beach" title="Marriott Vacation Club Pulse, South Beach">
+  </div>
+<div class="col-md-6">
+<h4>Marriott Vacation Club Pulse, South Beach</h4>
+
+</div>
+<div class="col-md-4 no-padding">
+    <div class="hotel-details">
+        <p class="lar-style search-results">Lowest Available Rates</p>
+        <p class="lar-style"><strong>Day:</strong> <span class="perdayPrice_hotel_3">{{perdayPrice_3}}</span> USD</p>
+        <p class="lar-style"><strong>Stay:</strong> <span class="totalPrice_hotel_3">{{totalPrice_3}}</span> USD</p>
+      <a href="javascript://" id="viewRates3" onClick="getDetails(3)" class="btn btn-primary view-rates" role="button">Make Selection</a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="type-details-3" class="noDisplay">
+<div class="filter-options">
+<div ng-repeat="type in aminity2" class="col-md-6">
+<div class="type-header" ng-click="getTypeDetails($event)" data-id="{{type.id}}" data-hotel="3">
+<table>
+<tr>
+<td style="width:30px;"><img src="img/{{type.img}}" /></td>
+<td style="width: 100px;">{{type.type}} </td>
+<td><span id="type_3_{{type.id}}" ng-if="type.type == 'Bed Type'">5.0</span><span id="type_3_{{type.id}}" ng-if="type.type != 'Bed Type'">0.0</span> &nbsp;USD</td>
+</tr>
+</table>
+</div>
+<ul class="hotel-options" id="hotel_3_{{type.id}}">
+<li ng-repeat="opt in type.options">
+<label>
+  <input type="radio" name="opt_3_{{type.id}}" ng-model="opt_3_[index]" data-hotel="3" data-id="{{type.id}}" data-price="{{opt.price}}" ng-click="getOptionPrice($event,$index)" data-check="{{opt.check}}" ng-checked="opt.check"/> &nbsp;&nbsp;&nbsp;{{opt.option}}
+</label>
+</li>
+</ul>
+</div>
+<a href="javascript://" id="search3" onClick="getHotelDetail(3)" class="btn btn-primary search" role="button">Search</a>
+</div>
+
+<!--Third hotel Accordion-->
+<div id="attribute-list-3" class="noDisplay">
+  <!--p>The following <strong>4 products</strong> are available for your travel plans.</p-->
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <!--<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse31" href="" aria-expanded="false" aria-controls="collapse31">-->
+          <!-- Toggle not required -->
+      <span data-parent="#accordion" data-target="#collapse31">
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse31" -->
+      <span ng-repeat="amn in aminity2">
+              <span ng-repeat="opts in amn.options | filter:{check:true}">{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span>, </span>
+            </span>
+       <light> DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse31" class="panel-collapse expand">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-3">
+              <p class="coral-color">DSP RATE PLAN</p>
+              <br>Regular Rate
+              <br>Room Details
+              <br><br>
+              TOTAL PRICE for <stron>1 room</strong>
+              <br><p class="rate"><strong><span class="perdayPrice_hotel_3">{{totalPrice_3}}</span> USD</strong></p>
+              <br><a href="javascript://" ng-click="getConfirmation($event)" class="btn btn-primary book-now" data-hname="Marriott Vacation Club Pulse, South Beach" role="button">Book Now</a>
+            </div>
+              <div class="hotel-details">
+                <div class="col-md-9 no-padding">
+                  <p><strong>Rate Breakdown</strong></p>
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <table class="col-md-12">
+                    <tr class="separator">
+                      <th>Dates</th>
+                      <th>Base Price</th>
+                      <th>Attribute Prices</th>
+                      <th></th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tr>
+                      <td>{{searchOptions.today}}</td>
+                      <td class="bold">330.00 USD</td>
+                      <td rowspan="4" colspan="2">
+            <table ng-repeat="amn in aminity2" style="width:100%;">
+              <tr ng-repeat="opts in amn.options | filter:{check:true}">
+                <td class="bold" style="width:150px">{{opts.option}} <span ng-if="amn.id == 1"> Bed</span><span ng-if="amn.id == 2"> View</span><span ng-if="amn.id == 3"> Floor</span></td>
+                <td>{{opts.price}}.00 USD</td>
+              </tr>
+            </table>
+            </td>
+                      <td class="bold coral-color"><span class="perdayPrice_hotel_3">{{perdayPrice_3}}</span> USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr>
+                      <td></td>
+                      <td></td>
+
+                    </tr>
+                     <tr class="separator">
+                      <td></td>
+                      <td></td>
+                      <td class="bold" style="width:150px;">Near Elevator</td>
+                      <td>0.00 USD</td>
+                      <td></td>
+                    </tr>
+                    <tr class="bold">
+                     <td>1 Night(s) per room</td>
+                     <td>330.00 USD</td>
+                     <td >{{aminities_price3}}.00 USD</td>
+                     <td></td>
+                     <td><span class="perdayPrice_hotel_3">{{perdayPrice_3}}</span> USD</td>
+                   </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="marginTopBottom">
+                <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax31')"> Total Taxes</a>
+                <table class="col-md-12 noDisplay marginLeft" id="total-tax31">
+                <tr>
+                <td >Review_CityTax (for stay)</td>
+                <td>10.00 USD</td>
+                </tr>
+                <tr>
+                <td >Review_RollAwayTax (for stay)</td>
+                <td>5.26 USD</td>
+                </tr>
+                <tr>
+                <td >Review_CountryTax (Jul 05)</td>
+                <td>5.90 USD</td>
+                </tr>
+                </table>
+                <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees31')"> Total Fees</a>
+
+                <table class="col-md-12 noDisplay marginLeft" id="total-fees31">
+                <tr>
+                <td >Resort Fee (Jul 05)</td>
+                <td>20.00 USD</td>
+                </tr>
+                <tr>
+                <td >State Cost Recovery Fee (Jul 05)</td>
+                <td>10.00 USD</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <p class="separator"></p>
+              <table class="col-md-12" style="margin-left: 30px;">
+                <tr>
+                  <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                  <td class="bold"><span class="perdayPrice_hotel_3">{{totalPrice_3}}</span> USD</td>
+                </tr>
+              </table>
+            </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+            </div>
+              </div>
+            </div>
+            <!--My section Ends-->
+
+</div>
+			<div ng-if="searchOptions.location != 'Miami Beach'">
+				Hotel Not Available!
+			</div>

@@ -1,0 +1,2768 @@
+
+
+<div ng-if="searchOptions.location == 'Miami Beach'" style="color:#000 !important;">
+            <!--My section Begins-->
+            <div class="container search-results" ng-if="user.rewardNo != '11001100'">
+              <div class="panel panel-default">
+                <div class="panel-body panel-heading">
+                  3 hotel list Found in Miami, Beach FL, USA
+                </div>
+              </div>
+              <div class="hotel-list">
+                <div class="thumbnail">
+
+<!--First hotel-->
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miasb/miasbe01.jpg" alt="The Ritz-Carlton, South Beach" title="The Ritz-Carlton, South Beach">
+                    </div>
+					<div class="col-md-6">
+					<h4>The Ritz-Carlton, South Beach</h4>
+					<div ng-repeat="type in aminity">
+						<div class="type-header" ng-click="getTypeDetails($event)" data-id="{{type.id}}" data-hotel="1">
+						<table>
+							<tr>
+							<td style="width:30px;"><img src="img/{{type.img}}" /></td>
+							<td style="width: 100px;">{{type.type}} </td>
+							<td><span id="type_1_{{type.id}}" ng-if="type.type == 'Bed Type'">5.0</span><span id="type_1_{{type.id}}" ng-if="type.type != 'Bed Type'">0.0</span> &nbsp;USD</td>
+							</tr>
+							</table>
+						</div>
+						<ul class="hotel-options" id="hotel_1_{{type.id}}">
+							<li ng-repeat="opt in type.options">
+								<label>
+									<input type="radio" name="opt_{{type.id}}" ng-model="opt_[index]" data-hotel="1" data-id="{{type.id}}" data-price="{{opt.price}}" ng-click="getOptionPrice($event,$index)" data-check="{{opt.check}}" ng-checked="opt.check"/> {{opt.option}}
+								</label>
+							</li>
+						</ul>
+					</div>
+					</div>
+					<div class="col-md-4 no-padding">
+                      <div class="hotel-details">
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> <span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> <span class="totalPrice_hotel_1">{{totalPrice_1}}</span> USD</p>
+                        <a href="javascript://" id="viewRates1" onClick="getHotelDetail(1)" class="btn btn-primary view-rates" role="button">View Rates</a>
+                      </div>
+					  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--First hotel Accordion-->
+<div id="attribute-list-1" class="noDisplay">
+  <!--p>The following <strong>4 products</strong> are available for your travel plans.</p-->
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <!--<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse11" href="" aria-expanded="false" aria-controls="collapse11">-->
+		  <a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse11" href="" >
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse11" -->
+		  <span ng-repeat="amn in aminity">
+							<span ng-repeat="opts in amn.options | filter:{check:true}">{{opts.option}}, </span>
+						</span>
+		   <light> DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse11" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-3">
+              <p class="coral-color">DSP RATE PLAN</p>
+              <br>Regular Rate
+              <br>Room Details
+              <br><br>
+              TOTAL PRICE for <stron>1 room</strong>
+              <br><p class="rate"><strong><span class="perdayPrice_hotel_1">{{totalPrice_1}}</span> USD</strong></p>
+              <br><a href="javascript://" ng-click="getConfirmation()" class="btn btn-primary book-now" role="button">Book Now</a>
+            </div>
+              <div class="hotel-details">
+                <div class="col-md-9 no-padding">
+                  <p><strong>Rate Breakdown</strong></p>
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <table class="col-md-12">
+                    <tr class="separator">
+                      <th>Dates</th>
+                      <th>Base Price</th>
+                      <th>Attribute Prices</th>
+                      <th></th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tr>
+                      <td>{{searchOptions.today}}</td>
+                      <td class="bold">250.00 USD</td>
+                      <td rowspan="4" colspan="2">
+						<table ng-repeat="amn in aminity" style="width:100%;">
+							<tr ng-repeat="opts in amn.options | filter:{check:true}">
+								<td class="bold" style="width:150px">{{opts.option}}</td>
+								<td>{{opts.price}}.00 USD</td>
+							</tr>
+						</table>
+					  </td>
+                      <td class="bold coral-color"><span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td> 
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      
+                    </tr>
+                     <tr>
+                      <td></td>
+                      <td></td>
+                      
+                    </tr>
+                     <tr class="separator">
+                      <td></td>
+                      <td></td>
+                      <td class="bold" style="width:150px;">Near Elevator</td>
+                      <td>0.00 USD</td>
+                      <td></td>
+                    </tr>
+                    <tr class="bold">
+                     <td>1 Night(s) per room</td>
+                     <td>250.00 USD</td>
+                     <td >58.00 USD</td>
+                     <td></td>
+                     <td><span class="perdayPrice_hotel_1">{{perdayPrice_1}}</span> USD</td>
+                   </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="marginTopBottom">
+                <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax11')"> Total Taxes</a>
+                <table class="col-md-12 noDisplay marginLeft" id="total-tax11">
+                <tr>
+                <td >Review_CityTax (for stay)</td>
+                <td>10.00 USD</td>
+                </tr>
+                <tr>
+                <td >Review_RollAwayTax (for stay)</td>
+                <td>5.26 USD</td>
+                </tr>
+                <tr>
+                <td >Review_CountryTax (Jul 05)</td>
+                <td>5.90 USD</td>
+                </tr>
+                </table>
+                <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees11')"> Total Fees</a>
+
+                <table class="col-md-12 noDisplay marginLeft" id="total-fees11">
+                <tr>
+                <td >Resort Fee (Jul 05)</td>
+                <td>20.00 USD</td>
+                </tr>
+                <tr>
+                <td >State Cost Recovery Fee (Jul 05)</td>
+                <td>10.00 USD</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <p class="separator"></p>
+              <table class="col-md-12" style="margin-left: 30px;">
+                <tr>
+                  <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                  <td class="bold"><span class="perdayPrice_hotel_1">{{totalPrice_1}}</span> USD</td>
+                </tr>
+              </table>
+            </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+    <!--div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		 <a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse12" href="" >
+          
+		  2 Queen Beds, Guest Room, Golf View, Low Floor, Pool View<light>DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse12" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>344.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">280.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>15.00 USD</td>
+                    <td class="bold coral-color">300.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>280.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>300.00 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax12')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax12">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees12')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees12">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">344.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse13" href="" >
+		  Deluxe Guest Room, Lake Front, 1 King or 2 Queens</a>
+        </h4>
+      </div>
+      <div id="collapse13" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>350.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">300.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>15.00 USD</td>
+                    <td class="bold coral-color">320.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>300.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>320.10 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax13')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax13">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees13')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees13">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">350.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse14" href="" >
+		  Executive Suite, 1 King, Sofa Bed, Lake Front <light></light></a>
+        </h4>
+      </div>
+      <div id="collapse14" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>379.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">290.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>15.00 USD</td>
+                    <td class="bold coral-color">335.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>290.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>335.00 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax14')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax14">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees14')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees14">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">379.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div-->
+  </div>
+</div>
+
+<!--Second hotel-->
+                <div class="panel panel-default">
+                <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miach/miache01.jpg" alt="Residence Inn Miami Beach South Beach" title="Residence Inn Miami Beach South Beach">
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-10 no-padding">
+                          <h4>Residence Inn Miami Beach South Beach </h4>
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> 380.00 USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> 402.10 USD</p>
+                        <a href="javascript://" onClick="getHotelDetail(2)" id="viewRates2" class="btn btn-primary view-rates" role="button">View Rates</a>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--Second hotel Accordion-->
+        <div id="attribute-list-2" class="noDisplay">
+          <p>The following <strong>3 products</strong> are available for your travel plans.</p>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse21" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse21"-->
+				  2 Queen Beds, Guest Room, Low Floor, Pool View <light></light></a>
+                </h4>
+              </div>
+              <div id="collapse21" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-3">
+                      <p class="coral-color">DSP RATE PLAN</p>
+                      <br>Regular Rate
+                      <br>Room Details
+                      <br><br>
+                      TOTAL PRICE for <stron>1 room</strong>
+                      <br><p class="rate"><strong>402.10 USD</strong></p>
+                      <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-9 no-padding">
+                          <p><strong>Rate Breakdown</strong></p>
+
+                          <div class="panel panel-default">
+                          <div class="panel-body">
+                          <table class="col-md-12">
+                            <tr class="separator">
+                              <th>Dates</th>
+                              <th>Base Price</th>
+                              <th>Attribute Prices</th>
+                              <th></th>
+                              <th>Total Price</th>
+                            </tr>
+                            <tr>
+                              <td>Jul 05, 2017</td>
+                              <td class="bold">350.00 USD</td>
+                              <td class="bold">Pool View</td>
+                              <td>15.00 USD</td>
+                              <td class="bold coral-color">380.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">2 Queen Beds</td>
+                              <td>10.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Balcony</td>
+                              <td>0.00 USD</td>
+                            </tr>
+                             <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Low Floor Room</td>
+                              <td>13.00 USD</td>
+                            </tr>
+                             <tr class="separator">
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Near Elevator</td>
+                              <td>0.00 USD</td>
+                              <td></td>
+                            </tr>
+                            <tr class="bold">
+                             <td>1 Night(s) per room</td>
+                             <td>350.00 USD</td>
+                             <td >58.00 USD</td>
+                             <td></td>
+                             <td>380.00 USD</td>
+                           </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="marginTopBottom">
+                        <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax21')"> Total Taxes</a>
+                        <table class="col-md-12 noDisplay marginLeft" id="total-tax21">
+                        <tr>
+                        <td >Review_CityTax (for stay)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_RollAwayTax (for stay)</td>
+                        <td>5.26 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_CountryTax (Jul 05)</td>
+                        <td>5.90 USD</td>
+                        </tr>
+                        </table>
+                        <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees21')"> Total Fees</a>
+
+                        <table class="col-md-12 noDisplay marginLeft" id="total-fees21">
+                        <tr>
+                        <td >Resort Fee (Jul 05)</td>
+                        <td>20.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >State Cost Recovery Fee (Jul 05)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div>
+                      <p class="separator"></p>
+                      <table class="col-md-12" style="margin-left: 30px;">
+                        <tr>
+                          <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                          <td class="bold">402.10 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse22" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse22"-->
+				  1 King or 2 Queens, Lake Front, Low Floor, Pool View <light>DSP</light></a>
+                </h4>
+              </div>
+              <div id="collapse22" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>420.00 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">350.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>15.00 USD</td>
+                            <td class="bold coral-color">388.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>350.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>388.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax22')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax22">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees22')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees22">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">420.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse23" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse23"-->
+				  Grande Suite, 1 BedRoom Larger Suite, 1 King Sofa Bed, Standard View <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse23" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>467.00 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">360.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>15.00 USD</td>
+                            <td class="bold coral-color">444.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>360.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>444.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax23')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax23">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees23')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees23">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">467.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+<!--Third hotel-->
+            <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miamv/miamve01.jpg" alt="Marriott Vacation Club Pulse, South Beach" title="Marriott Vacation Club Pulse, South Beach">
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-10 no-padding">
+                          <h4>Marriott Vacation Club Pulse, South Beach </h4>
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> 488.00 USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> 506.00 USD</p>
+                        <a href="javascript://" onClick="getHotelDetail(3)" id="viewRates3" class="btn btn-primary view-rates" role="button">View Rates</a>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--Third hotel Accordion-->
+        <div id="attribute-list-3" class="noDisplay">
+          <p>The following <strong>3 products</strong> are available for your travel plans.</p>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse31" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse31"-->
+				  2 Queen Beds, Guest Room, Low Floor, Pool View <light>DSP</light></a>
+                </h4>
+              </div>
+              <div id="collapse31" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-3">
+                      <p class="coral-color">DSP RATE PLAN</p>
+                      <br>Regular Rate
+                      <br>Room Details
+                      <br><br>
+                      TOTAL PRICE for <stron>1 room</strong>
+                      <br><p class="rate"><strong>506.00 USD</strong></p>
+                      <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-9 no-padding">
+                          <p><strong>Rate Breakdown</strong></p>
+
+                          <div class="panel panel-default">
+                          <div class="panel-body">
+                          <table class="col-md-12">
+                            <tr class="separator">
+                              <th>Dates</th>
+                              <th>Base Price</th>
+                              <th>Attribute Prices</th>
+                              <th></th>
+                              <th>Total Price</th>
+                            </tr>
+                            <tr>
+                              <td>Jul 05, 2017</td>
+                              <td class="bold">450.00 USD</td>
+                              <td class="bold">Pool View</td>
+                              <td>15.00 USD</td>
+                              <td class="bold coral-color">488.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">2 Queen Beds</td>
+                              <td>10.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Balcony</td>
+                              <td>0.00 USD</td>
+                            </tr>
+                             <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Low Floor Room</td>
+                              <td>13.00 USD</td>
+                            </tr>
+                             <tr class="separator">
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Near Elevator</td>
+                              <td>0.00 USD</td>
+                              <td></td>
+                            </tr>
+                            <tr class="bold">
+                             <td>1 Night(s) per room</td>
+                             <td>450.00 USD</td>
+                             <td >58.00 USD</td>
+                             <td></td>
+                             <td>488.00 USD</td>
+                           </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="marginTopBottom">
+                        <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax31')"> Total Taxes</a>
+                        <table class="col-md-12 noDisplay marginLeft" id="total-tax31">
+                        <tr>
+                        <td >Review_CityTax (for stay)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_RollAwayTax (for stay)</td>
+                        <td>5.26 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_CountryTax (Jul 05)</td>
+                        <td>5.90 USD</td>
+                        </tr>
+                        </table>
+                        <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees31')"> Total Fees</a>
+
+                        <table class="col-md-12 noDisplay marginLeft" id="total-fees31">
+                        <tr>
+                        <td >Resort Fee (Jul 05)</td>
+                        <td>20.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >State Cost Recovery Fee (Jul 05)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div>
+                      <p class="separator"></p>
+                      <table class="col-md-12" style="margin-left: 30px;">
+                        <tr>
+                          <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                          <td class="bold">506.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse32" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse32"-->
+				  Lake Front, Guest Room, 1 King or 2 Queen <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse32" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>560.40 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">480.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>15.00 USD</td>
+                            <td class="bold coral-color">556.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>480.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>556.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax32')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax32">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees32')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees32">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">560.40 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse33" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse33"-->
+				  Deluxe Guest Room, 1 King or 2 Queens <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse33" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>600.10 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">550.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>15.00 USD</td>
+                            <td class="bold coral-color">588.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>550.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>588.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax33')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax33">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees33')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees33">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">600.10 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+              </div>
+            </div>
+            <!--My section Ends-->
+
+
+
+
+            <!--My section Begins-->
+            <div class="container search-results" ng-if="user.rewardNo == '11001100'">
+              <div class="panel panel-default">
+                <div class="panel-body panel-heading">
+                  3 hotellist Found in Miami, Beach FL, USA
+                </div>
+              </div>
+              <div class="hotel-list">
+                <div class="thumbnail">
+
+<!--First hotel-->
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miasb/miasbe01.jpg" alt="The Ritz-Carlton, South Beach" title="The Ritz-Carlton, South Beach">
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-10 no-padding">
+                          <h4>The Ritz-Carlton, South Beach</h4>
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> 273.00 USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> 324.16 USD</p>
+                        <a href="javascript://" id="viewRates1" onClick="getHotelDetail(1)" class="btn btn-primary view-rates" role="button">View Rates</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--First hotel Accordion-->
+<div id="attribute-list-1" class="noDisplay">
+  <p>The following <strong>4 products</strong> are available for your travel plans.</p>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <!--<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse11" href="" aria-expanded="false" aria-controls="collapse11">-->
+		  <a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse11" href="" >
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse11" -->
+		  2 Queen Beds, Guest Room, Low Floor, Pool View <light>DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse11" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-md-12">
+            <div class="col-md-3">
+              <p class="coral-color">DSP RATE PLAN</p>
+              <br>Regular Rate
+              <br>Room Details
+              <br><br>
+              TOTAL PRICE for <stron>1 room</strong>
+              <br><p class="rate"><strong>324.16 USD</strong></p>
+              <br><a href="javascript://" ng-click="getConfirmation()" class="btn btn-primary book-now" role="button">Book Now</a>
+            </div>
+              <div class="hotel-details">
+                <div class="col-md-9 no-padding">
+                  <p><strong>Rate Breakdown</strong></p>
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <table class="col-md-12">
+                    <tr class="separator">
+                      <th>Dates</th>
+                      <th>Base Price</th>
+                      <th>Attribute Prices</th>
+                      <th></th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tr>
+                      <td>Jul 05, 2017</td>
+                      <td class="bold">250.00 USD</td>
+                      <td class="bold">Pool View</td>
+                      <td>0.00 USD</td>
+                      <td class="bold coral-color">273.00 USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bold">2 Queen Beds</td>
+                      <td>10.00 USD</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bold">Balcony</td>
+                      <td>0.00 USD</td>
+                    </tr>
+                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bold">Low Floor Room</td>
+                      <td>13.00 USD</td>
+                    </tr>
+                     <tr class="separator">
+                      <td></td>
+                      <td></td>
+                      <td class="bold">Near Elevator</td>
+                      <td>0.00 USD</td>
+                      <td></td>
+                    </tr>
+                    <tr class="bold">
+                     <td>1 Night(s) per room</td>
+                     <td>250.00 USD</td>
+                     <td >58.00 USD</td>
+                     <td></td>
+                     <td>273.00 USD</td>
+                   </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="marginTopBottom">
+                <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax11')"> Total Taxes</a>
+                <table class="col-md-12 noDisplay marginLeft" id="total-tax11">
+                <tr>
+                <td >Review_CityTax (for stay)</td>
+                <td>10.00 USD</td>
+                </tr>
+                <tr>
+                <td >Review_RollAwayTax (for stay)</td>
+                <td>5.26 USD</td>
+                </tr>
+                <tr>
+                <td >Review_CountryTax (Jul 05)</td>
+                <td>5.90 USD</td>
+                </tr>
+                </table>
+                <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees11')"> Total Fees</a>
+
+                <table class="col-md-12 noDisplay marginLeft" id="total-fees11">
+                <tr>
+                <td >Resort Fee (Jul 05)</td>
+                <td>20.00 USD</td>
+                </tr>
+                <tr>
+                <td >State Cost Recovery Fee (Jul 05)</td>
+                <td>10.00 USD</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <p class="separator"></p>
+              <table class="col-md-12" style="margin-left: 30px;">
+                <tr>
+                  <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                  <td class="bold">324.16 USD</td>
+                </tr>
+              </table>
+            </div>
+              </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		 <a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse12" href="" >
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse12"-->
+		  2 Queen Beds, Guest Room, Golf View, Low Floor, Pool View<light>DSP</light></a>
+        </h4>
+      </div>
+      <div id="collapse12" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>329.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">280.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>0.00 USD</td>
+                    <td class="bold coral-color">285.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>280.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>285.00 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax12')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax12">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees12')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees12">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">329.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse13" href="" >
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse13"-->
+		  Deluxe Guest Room, Lake Front, 1 King or 2 Queens</a>
+        </h4>
+      </div>
+      <div id="collapse13" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>335.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">300.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>0.00 USD</td>
+                    <td class="bold coral-color">305.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>300.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>305.10 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax13')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax13">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees13')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees13">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">335.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+		<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse14" href="" >
+          <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse14"-->
+		  Executive Suite, 1 King, Sofa Bed, Lake Front <light>MARSHA</light></a>
+        </h4>
+      </div>
+      <div id="collapse14" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="col-md-3">
+            <p class="coral-color">DSP RATE PLAN</p>
+            <br>Regular Rate
+            <br>Room Details
+            <br><br>
+            TOTAL PRICE for <stron>1 room</strong>
+            <br><p class="rate"><strong>364.16 USD</strong></p>
+            <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+          </div>
+            <div class="hotel-details">
+              <div class="col-md-9 no-padding">
+                <p><strong>Rate Breakdown</strong></p>
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <table class="col-md-12">
+                  <tr class="separator">
+                    <th>Dates</th>
+                    <th>Base Price</th>
+                    <th>Attribute Prices</th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>Jul 05, 2017</td>
+                    <td class="bold">290.00 USD</td>
+                    <td class="bold">Pool View</td>
+                    <td>0.00 USD</td>
+                    <td class="bold coral-color">320.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">2 Queen Beds</td>
+                    <td>10.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Balcony</td>
+                    <td>0.00 USD</td>
+                  </tr>
+                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Low Floor Room</td>
+                    <td>13.00 USD</td>
+                  </tr>
+                   <tr class="separator">
+                    <td></td>
+                    <td></td>
+                    <td class="bold">Near Elevator</td>
+                    <td>0.00 USD</td>
+                    <td></td>
+                  </tr>
+                  <tr class="bold">
+                   <td>1 Night(s) per room</td>
+                   <td>290.00 USD</td>
+                   <td >58.00 USD</td>
+                   <td></td>
+                   <td>320.00 USD</td>
+                 </tr>
+                </table>
+              </div>
+            </div>
+            <div class="marginTopBottom">
+              <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax14')"> Total Taxes</a>
+              <table class="col-md-12 noDisplay marginLeft" id="total-tax14">
+              <tr>
+              <td >Review_CityTax (for stay)</td>
+              <td>10.00 USD</td>
+              </tr>
+              <tr>
+              <td >Review_RollAwayTax (for stay)</td>
+              <td>5.26 USD</td>
+              </tr>
+              <tr>
+              <td >Review_CountryTax (Jul 05)</td>
+              <td>5.90 USD</td>
+              </tr>
+              </table>
+              <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees14')"> Total Fees</a>
+
+              <table class="col-md-12 noDisplay marginLeft" id="total-fees14">
+              <tr>
+              <td >Resort Fee (Jul 05)</td>
+              <td>20.00 USD</td>
+              </tr>
+              <tr>
+              <td >State Cost Recovery Fee (Jul 05)</td>
+              <td>10.00 USD</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <p class="separator"></p>
+            <table class="col-md-12" style="margin-left: 30px;">
+              <tr>
+                <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                <td class="bold">364.16 USD</td>
+              </tr>
+            </table>
+          </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Second hotel-->
+                <div class="panel panel-default">
+                <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miach/miache01.jpg" alt="Residence Inn Miami Beach South Beach" title="Residence Inn Miami Beach South Beach">
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-10 no-padding">
+                          <h4>Residence Inn Miami Beach South Beach </h4>
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> 365.00 USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> 487.10 USD</p>
+                        <a href="javascript://" onClick="getHotelDetail(2)" id="viewRates2" class="btn btn-primary view-rates" role="button">View Rates</a>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--Second hotel Accordion-->
+        <div id="attribute-list-2" class="noDisplay">
+          <p>The following <strong>3 products</strong> are available for your travel plans.</p>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse21" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse21"-->
+				  2 Queen Beds, Guest Room, Low Floor, Pool View <light>DSP</light></a>
+                </h4>
+              </div>
+              <div id="collapse21" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-3">
+                      <p class="coral-color">DSP RATE PLAN</p>
+                      <br>Regular Rate
+                      <br>Room Details
+                      <br><br>
+                      TOTAL PRICE for <stron>1 room</strong>
+                      <br><p class="rate"><strong>387.10 USD</strong></p>
+                      <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-9 no-padding">
+                          <p><strong>Rate Breakdown</strong></p>
+
+                          <div class="panel panel-default">
+                          <div class="panel-body">
+                          <table class="col-md-12">
+                            <tr class="separator">
+                              <th>Dates</th>
+                              <th>Base Price</th>
+                              <th>Attribute Prices</th>
+                              <th></th>
+                              <th>Total Price</th>
+                            </tr>
+                            <tr>
+                              <td>Jul 05, 2017</td>
+                              <td class="bold">350.00 USD</td>
+                              <td class="bold">Pool View</td>
+                              <td>0.00 USD</td>
+                              <td class="bold coral-color">365.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">2 Queen Beds</td>
+                              <td>10.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Balcony</td>
+                              <td>0.00 USD</td>
+                            </tr>
+                             <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Low Floor Room</td>
+                              <td>13.00 USD</td>
+                            </tr>
+                             <tr class="separator">
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Near Elevator</td>
+                              <td>0.00 USD</td>
+                              <td></td>
+                            </tr>
+                            <tr class="bold">
+                             <td>1 Night(s) per room</td>
+                             <td>350.00 USD</td>
+                             <td >58.00 USD</td>
+                             <td></td>
+                             <td>365.00 USD</td>
+                           </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="marginTopBottom">
+                        <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax21')"> Total Taxes</a>
+                        <table class="col-md-12 noDisplay marginLeft" id="total-tax21">
+                        <tr>
+                        <td >Review_CityTax (for stay)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_RollAwayTax (for stay)</td>
+                        <td>5.26 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_CountryTax (Jul 05)</td>
+                        <td>5.90 USD</td>
+                        </tr>
+                        </table>
+                        <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees21')"> Total Fees</a>
+
+                        <table class="col-md-12 noDisplay marginLeft" id="total-fees21">
+                        <tr>
+                        <td >Resort Fee (Jul 05)</td>
+                        <td>20.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >State Cost Recovery Fee (Jul 05)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div>
+                      <p class="separator"></p>
+                      <table class="col-md-12" style="margin-left: 30px;">
+                        <tr>
+                          <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                          <td class="bold">387.10 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse22" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse22"-->
+				  1 King or 2 Queens, Lake Front, Low Floor, Pool View <light>DSP</light></a>
+                </h4>
+              </div>
+              <div id="collapse22" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>405.00 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">350.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>0.00 USD</td>
+                            <td class="bold coral-color">373.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>350.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>373.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax22')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax22">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees22')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees22">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">405.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse23" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse23"-->
+				  Grande Suite, 1 BedRoom Larger Suite, 1 King Sofa Bed, Standard View <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse23" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>452.00 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">360.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>0.00 USD</td>
+                            <td class="bold coral-color">429.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>360.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>429.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax23')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax23">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees23')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees23">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">452.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+<!--Third hotel-->
+            <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="col-md-2 no-padding">
+                      <img src="https://cache.marriott.com/propertyimages/m/miamv/miamve01.jpg" alt="Marriott Vacation Club Pulse, South Beach" title="Marriott Vacation Club Pulse, South Beach">
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-10 no-padding">
+                          <h4>Marriott Vacation Club Pulse, South Beach </h4>
+                          <p class="lar-style search-results">Lowest Available Rates</p>
+                          <p class="lar-style"><strong>Day:</strong> 473.00 USD</p>
+                          <p class="lar-style"><strong>Stay:</strong> 491.00 USD</p>
+                        <a href="javascript://" onClick="getHotelDetail(3)" id="viewRates3" class="btn btn-primary view-rates" role="button">View Rates</a>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--Third hotel Accordion-->
+        <div id="attribute-list-3" class="noDisplay">
+          <p>The following <strong>3 products</strong> are available for your travel plans.</p>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse31" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse31"-->
+				  2 Queen Beds, Guest Room, Low Floor, Pool View <light>DSP</light></a>
+                </h4>
+              </div>
+              <div id="collapse31" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                  <div class="panel panel-default">
+                  <div class="panel-body">
+                  <div class="row">
+                      <div class="col-md-12">
+                    <div class="col-md-3">
+                      <p class="coral-color">DSP RATE PLAN</p>
+                      <br>Regular Rate
+                      <br>Room Details
+                      <br><br>
+                      TOTAL PRICE for <stron>1 room</strong>
+                      <br><p class="rate"><strong>491.00 USD</strong></p>
+                      <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                    </div>
+                      <div class="hotel-details">
+                        <div class="col-md-9 no-padding">
+                          <p><strong>Rate Breakdown</strong></p>
+
+                          <div class="panel panel-default">
+                          <div class="panel-body">
+                          <table class="col-md-12">
+                            <tr class="separator">
+                              <th>Dates</th>
+                              <th>Base Price</th>
+                              <th>Attribute Prices</th>
+                              <th></th>
+                              <th>Total Price</th>
+                            </tr>
+                            <tr>
+                              <td>Jul 05, 2017</td>
+                              <td class="bold">450.00 USD</td>
+                              <td class="bold">Pool View</td>
+                              <td>0.00 USD</td>
+                              <td class="bold coral-color">473.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">2 Queen Beds</td>
+                              <td>10.00 USD</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Balcony</td>
+                              <td>0.00 USD</td>
+                            </tr>
+                             <tr>
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Low Floor Room</td>
+                              <td>13.00 USD</td>
+                            </tr>
+                             <tr class="separator">
+                              <td></td>
+                              <td></td>
+                              <td class="bold">Near Elevator</td>
+                              <td>0.00 USD</td>
+                              <td></td>
+                            </tr>
+                            <tr class="bold">
+                             <td>1 Night(s) per room</td>
+                             <td>450.00 USD</td>
+                             <td >58.00 USD</td>
+                             <td></td>
+                             <td>473.00 USD</td>
+                           </tr>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="marginTopBottom">
+                        <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax31')"> Total Taxes</a>
+                        <table class="col-md-12 noDisplay marginLeft" id="total-tax31">
+                        <tr>
+                        <td >Review_CityTax (for stay)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_RollAwayTax (for stay)</td>
+                        <td>5.26 USD</td>
+                        </tr>
+                        <tr>
+                        <td >Review_CountryTax (Jul 05)</td>
+                        <td>5.90 USD</td>
+                        </tr>
+                        </table>
+                        <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees31')"> Total Fees</a>
+
+                        <table class="col-md-12 noDisplay marginLeft" id="total-fees31">
+                        <tr>
+                        <td >Resort Fee (Jul 05)</td>
+                        <td>20.00 USD</td>
+                        </tr>
+                        <tr>
+                        <td >State Cost Recovery Fee (Jul 05)</td>
+                        <td>10.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div>
+                      <p class="separator"></p>
+                      <table class="col-md-12" style="margin-left: 30px;">
+                        <tr>
+                          <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                          <td class="bold">491.00 USD</td>
+                        </tr>
+                      </table>
+                    </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse32" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse32"-->
+				  Lake Front, Guest Room, 1 King or 2 Queen <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse32" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>545.40 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">480.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>0.00 USD</td>
+                            <td class="bold coral-color">541.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>480.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>541.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax32')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax32">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees32')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees32">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">545.40 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+				<a class="collapsed accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse33" href="" >
+                  <!--a data-toggle="collapse" data-parent="#accordion" href="#collapse33"-->
+				  Deluxe Guest Room, 1 King or 2 Queens <light>MARSHA</light></a>
+                </h4>
+              </div>
+              <div id="collapse33" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="panel panel-default">
+                <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                  <div class="col-md-3">
+                    <p class="coral-color">DSP RATE PLAN</p>
+                    <br>Regular Rate
+                    <br>Room Details
+                    <br><br>
+                    TOTAL PRICE for <stron>1 room</strong>
+                    <br><p class="rate"><strong>585.10 USD</strong></p>
+                    <br><a href="javascript://" class="btn btn-primary book-now" role="button">Book Now</a>
+                  </div>
+                    <div class="hotel-details">
+                      <div class="col-md-9 no-padding">
+                        <p><strong>Rate Breakdown</strong></p>
+
+                        <div class="panel panel-default">
+                        <div class="panel-body">
+                        <table class="col-md-12">
+                          <tr class="separator">
+                            <th>Dates</th>
+                            <th>Base Price</th>
+                            <th>Attribute Prices</th>
+                            <th></th>
+                            <th>Total Price</th>
+                          </tr>
+                          <tr>
+                            <td>Jul 05, 2017</td>
+                            <td class="bold">550.00 USD</td>
+                            <td class="bold">Pool View</td>
+                            <td>0.00 USD</td>
+                            <td class="bold coral-color">573.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">2 Queen Beds</td>
+                            <td>10.00 USD</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Balcony</td>
+                            <td>0.00 USD</td>
+                          </tr>
+                           <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Low Floor Room</td>
+                            <td>13.00 USD</td>
+                          </tr>
+                           <tr class="separator">
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Near Elevator</td>
+                            <td>0.00 USD</td>
+                            <td></td>
+                          </tr>
+                          <tr class="bold">
+                           <td>1 Night(s) per room</td>
+                           <td>550.00 USD</td>
+                           <td >58.00 USD</td>
+                           <td></td>
+                           <td>573.00 USD</td>
+                         </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="marginTopBottom">
+                      <a class="glyphicon glyphicon-triangle-right" onClick="getTotalTax('total-tax33')"> Total Taxes</a>
+                      <table class="col-md-12 noDisplay marginLeft" id="total-tax33">
+                      <tr>
+                      <td >Review_CityTax (for stay)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_RollAwayTax (for stay)</td>
+                      <td>5.26 USD</td>
+                      </tr>
+                      <tr>
+                      <td >Review_CountryTax (Jul 05)</td>
+                      <td>5.90 USD</td>
+                      </tr>
+                      </table>
+                      <br><a class="glyphicon glyphicon-triangle-right" onClick="getTotalFees('total-fees33')"> Total Fees</a>
+
+                      <table class="col-md-12 noDisplay marginLeft" id="total-fees33">
+                      <tr>
+                      <td >Resort Fee (Jul 05)</td>
+                      <td>20.00 USD</td>
+                      </tr>
+                      <tr>
+                      <td >State Cost Recovery Fee (Jul 05)</td>
+                      <td>10.00 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div>
+                    <p class="separator"></p>
+                    <table class="col-md-12" style="margin-left: 30px;">
+                      <tr>
+                        <td class="bold">Total Price with tax and Fees for 1 night(s)</td>
+                        <td class="bold">585.10 USD</td>
+                      </tr>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+              </div>
+            </div>
+            <!--My section Ends-->
+</div>
+			<div ng-if="searchOptions.location != 'Miami Beach'">
+				Hotel Not Available!
+			</div>

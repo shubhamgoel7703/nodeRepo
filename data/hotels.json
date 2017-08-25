@@ -1,0 +1,204 @@
+[{
+	"results":[
+		{
+			"hotel":"The Ritz-Carlton, South Beach",
+			"id":"1",
+			"address":"1 Lincoln Road Miami Beach, Florida 33139",
+			"img":"https://cache.marriott.com/propertyimages/m/miasb/miasbe01.jpg",
+			"location":"Miami",
+			"price": 339,
+			"ammenity":[
+				{
+					"title":"2 Queen Beds, Guest Room, Low Floor, Pool View",
+					"source":"DSP",
+					"baseprice": 250,
+					"date": "Jul 20 2017",
+					"subdetails":[
+						{
+							"attribute":"Pool View",
+							"price":15,
+						}
+					]
+				},
+				{
+					"title":"2 Queen Beds, Guest Room, Golf View, Low Floor, Pool View",
+					"source":"DSP",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Lake Front, Guest Room, Low Floor, Pool View",
+					"source":"MARSHA",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Grande Suite, 1 Bedroom, Larger Suite, 1 King Sofa Bed, Standard View",
+					"source":"MARSHA",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Presidential Suite, 1 King Sofa Bed, Lake Front, High Floor",
+					"source":"MARSHA",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+			]
+		},
+		{
+			"hotel":"Residence Inn Miami Beach South Beach",
+			"id":"2",
+			"address":"1231 17th Street Miami Beach, Florida 33139",
+			"location":"Miami",
+			"ammenity":[
+				{
+					"title":"2 Queen Beds, Guest Room, Low Floor, Pool View",
+					"source":"DSP",
+					"subdetails":[
+						{
+								"price": "test"
+						}
+					]
+				},
+				{
+					"title":"2 Queen Beds, Guest Room, Golf View, Low Floor, Pool View",
+					"source":"DSP",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Deluxe, Guest Room, 1 King or 2 Queen",
+					"source":"MARSHA",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Lake Front, Guest Room, Low Floor, Pool View",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Grande Suite, 1 Bedroom, Larger Suite, 1 King Sofa Bed, Standard View",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Presidential Suite, 1 King Sofa Bed, Lake Front, High Floor",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Executive Suite, 1 King Sofa Bed, Lake Front",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				}
+			]
+		},
+		{
+			"hotel":"Marriott Vacation Club Pulse, South Beach",
+			"id":"3",
+			"address": "1410 Ocean Dr. Miami Beach, Florida 33139",
+			"location":"Miami",
+			"ammenity":[
+				{
+					"title":"2 Queen Beds, Guest Room, Low Floor, Pool View",
+					"source":"DSP",
+					"subdetails":[
+						{
+								"price": "test"
+						}
+					]
+				},
+				{
+					"title":"2 Queen Beds, Guest Room, Golf View, Low Floor, Pool View",
+					"source":"DSP",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Deluxe, Guest Room, 1 King or 2 Queen",
+					"source":"MARSHA",
+					"subdetails":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Lake Front, Guest Room, Low Floor, Pool View",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Grande Suite, 1 Bedroom, Larger Suite, 1 King Sofa Bed, Standard View",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Presidential Suite, 1 King Sofa Bed, Lake Front, High Floor",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				},
+				{
+					"title":"Executive Suite, 1 King Sofa Bed, Lake Front",
+					"source":"MARSHA",
+					"reply_comment":[
+						{
+								"test": "test"
+						}
+					]
+				}
+			]
+		}
+	]
+}]

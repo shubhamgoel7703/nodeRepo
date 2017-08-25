@@ -1,0 +1,14 @@
+[{
+	"users":[
+  {
+    "reward": 11001100,
+    "name": "Leanne Graham",
+    "type": "Platinum"
+  },
+  {
+    "reward": 22002200,
+    "name": "John Doe",
+    "type": "Member"
+  }
+]
+}]
